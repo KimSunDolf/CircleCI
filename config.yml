@@ -2,7 +2,7 @@ version: 2.1
 executors:
   docker-executor:
     docker:
-      - image: cimg/base:2021.04
+      - image: node
 jobs:
   automated-api-tests:
     executor: docker-executor
@@ -13,7 +13,7 @@ jobs:
           command: npm install -g apifox-cli
       - run:
           name: Running Test Scenario
-          command: apifox run http://192.168.10.208:5777/api/v1/projects/345286/api-test/ci-config/345136/detail?token=x9txg4nbJoKdVpWyBlnIjs -r html,cli
+          command: apifox run https://api.apifox.com/api/v1/projects/1320441/api-test/ci-config/409476/detail?token=x9wRvPCs21ofE3FW8439Xp -r html,cli
 workflows:
   version: 2
   build:
